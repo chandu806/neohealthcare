@@ -11,7 +11,7 @@ const List = () => {
     const dispatch = useDispatch()
     const lists = useSelector((state) => state.reducers.lists)
 
-    const { time, setTimerOn } = useTimer(2)
+    const { time, setTimeOn } = useTimer(1)
 
 
 
@@ -26,52 +26,34 @@ const List = () => {
                     onChange={(e) => { setInputData(e.target.value) }}
                     placeholder='Enter Data ' />
                 <button
-                    onClick={() => { dispatch(addTodo(inputData), setInputData(''), setTimerOn(true)) }}
+                    onClick={() => { dispatch(addTodo(inputData), setInputData(''), setTimeOn(true)) }}
                 >Add</button>
             </div>
             
             <div className='showItems'>
-
                 {
                     lists.map((ele) => {
-
                         return (
                             <div className='Todo' key={ele.id}>
-
-                                <h3>{ele.data}</h3>
-
+                                <h5>{ele.data}</h5>
                                 <div className='items'>
-
-                                    <h4>
+                                    <h3>        
+                                        <span>{(Math.floor(time / 60)) < 20 ? ("0" + Math.floor(time / 60)) : (Math.floor(time / 60))}:</span>
                                        
-                                        <span>{(Math.floor(time / 60)) < 10 ? ("0" + Math.floor(time / 60)) : (Math.floor(time / 60))}:</span>
-                                       
-                                        <span>{(time % 60) < 10 ? ("0" + time % 60) : (time % 60)}</span>
-                                    </h4>
+                                        <span>{(time % 60) < 20 ? ("0" + time % 60) : (time % 60)}</span>
+                                    </h3>
                                     <input type="checkbox" value="checked" />
-
                                     <button
                                         onClick={() => {
-                                            dispatch(deleteTodo(ele.id), setTimerOn(false))
+                                            dispatch(deleteTodo(ele.id), setTimeOn(false))
                                         }}
                                     >Delete</button>
-
-
                                 </div>
-
-
-
                             </div>
-
                         )
                     })
                 }
-
             </div>
-
-
-
-
         </div>
     )
 }

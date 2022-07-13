@@ -1,27 +1,24 @@
-
- 
  
  .Todo{
- 
      display: flex;
-      justify-content: space-between;
       align-items: center;
       border-radius: 5px;
       border: 0.1px solid ghostwhite;
-      padding-left: 5px;
-      padding-right: 5px;
-      height: 50px;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      width: 300px;
+      padding-right: 4px;
+      height: 40px;
+      margin-top: 8px;
+      margin-bottom: 8px;
+      width: 200px;
+      justify-content: space-between;
+      padding-left: 4px;
  }
  
  .items{
- 
+
    display: flex;
    justify-content: space-between;
    align-items: center;
-   gap: 5px;
+   gap: 3px;
    justify-content: center;
  
  }
@@ -34,18 +31,18 @@
  
  
  .addTodo input{
-    width: 250px;
-    height: 30px;
-    border-radius: 5px;
+    width: 230px;
+    height: 25px;
+   
  }
  .iconContainer button{
     cursor: pointer;
-  border-radius: 5px;
+ 
 }
 
  .addTodo button{
      height: 30px;
-     border-radius: 5px;
-     cursor: pointer;
+   
+    
  }
  

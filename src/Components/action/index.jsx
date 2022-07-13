@@ -9,7 +9,6 @@ export const addTodo=(data)=>{
     }
 }
 export const deleteTodo=(id)=>{
-
    return {
        type:"Delete",
        id
@@ -17,7 +16,6 @@ export const deleteTodo=(id)=>{
 }
 
 export const completeTodo=()=>{
-
    return {
        type:"Complete"
    }

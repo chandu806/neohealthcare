@@ -2,8 +2,6 @@ const data = {
     lists: []
 }
 const reducer = (state = data, action) => {
-
-
     switch (action.type) {
 
         case "Add":
@@ -17,7 +15,6 @@ const reducer = (state = data, action) => {
                         data,
 
                     }]
-
             }
 
             case "Delete":
@@ -26,7 +23,6 @@ const reducer = (state = data, action) => {
             return {
                 ...state,
                 lists: newList
-
             }
 
         default: return state;
